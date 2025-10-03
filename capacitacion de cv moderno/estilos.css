@@ -1,0 +1,224 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+header {
+    background-color: #0288e7;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Container con sidebar y contenido */
+.container {
+    display: flex;
+    min-height: 80vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background-color: #005fa3;
+    padding-top: 20px;
+    flex-shrink: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.menu-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.menu-btn:hover {
+    background-color: #00437a;
+}
+
+/* Contenido principal */
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Secciones colapsables */
+.collapse-section {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.collapse-section.active {
+    max-height: 1500px; /* suficiente para mostrar todo */
+    padding: 20px;
+}
+
+/* QR */
+.qr-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.qr-item {
+    text-align: center;
+}
+
+.qr-item img {
+    width: 150px;
+    height: 150px;
+}
+
+/* Botones CV */
+.cv-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #0077cc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #005fa3;
+}
+
+/* Contenedor del PDF */
+#visorPDF {
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Estilos para el iframe del visor PDF (con sombra y transición) */
+#visorPDF iframe {
+    width: 90%;
+    height: 500px;
+    border: 2px solid #005fa3;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 95, 163, 0.5);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Responsive */
+@media(max-width: 768px){
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+    }
+    .menu-btn {
+        text-align: center;
+        padding: 15px;
+    }
+    #visorPDF iframe {
+        height: 400px;
+    }
+}
+
+/* PDF resaltado */
+/* (Consolidado más arriba) */
+
+/* Botón activo */
+.btn.active, .menu-btn.active {
+    background-color: #00437a;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Transición suave para botones */
+.btn, .menu-btn {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    padding: 20px;
+}
+
+.header-container .logo {
+    width: 280px;  /* Ajusta el tamaño según convenga */
+    height: auto;
+}
+
+.header-text h1 {
+    margin-bottom: 5px;
+    padding-right: auto;
+    font-size: 24px;
+}
+
+.header-text p {
+    margin: 0;
+    padding-right: auto;
+    font-size: 14px;
+    color: #e0e0e0;
+}
+
+@media(max-width: 600px) {
+    .header-container {
+        flex-direction: column; /* Logo arriba, texto abajo */
+        align-items: center;
+        text-align: center;
+    }
+
+    .header-container .logo {
+        width: 100px; /* Puedes ajustar tamaño */
+        margin-bottom: 10px;
+    }
+
+    .header-text h1 {
+        font-size: 20px;
+    }
+
+    .header-text p {
+        font-size: 12px;
+    }
+}

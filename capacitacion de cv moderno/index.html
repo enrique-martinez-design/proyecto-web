@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capacitación CV</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <img src="imagenes/logo1.png" alt="Logo Instituto" class="logo">
+        <div class="header-text">
+            <h1>Capacitación: Cómo crear tu CV</h1>
+            <p>Material de apoyo, links y códigos QR</p>
+        </div>
+    </div>
+</header>
+
+<section id="bienvenida" class="collapse-section active">
+    <h2>Bienvenido a la Capacitación de CV</h2>
+    <p>Selecciona una sección del menú lateral para acceder a los links, códigos QR o ejemplos de CV.</p>
+</section>
+
+<div class="container">
+    <!-- Menú lateral -->
+    <nav class="sidebar" role="navigation" aria-label="Menú lateral">
+        <ul>
+            <li><button class="menu-btn" data-target="links" aria-controls="links" aria-expanded="false">Links útiles</button></li>
+            <li><button class="menu-btn" data-target="qr" aria-controls="qr" aria-expanded="false">Códigos QR</button></li>
+            <li><button class="menu-btn" data-target="ejemplos" aria-controls="ejemplos" aria-expanded="false">Ejemplos de CV</button></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="content">
+        <section id="links" class="collapse-section" aria-hidden="true">
+            <h2>Links útiles</h2>
+            <ul>
+                <li><a href="https://www.canva.com/" target="_blank">Plantillas de CV en Canva</a></li>
+                <li><a href="https://www.zety.com/resume-builder" target="_blank">Constructor de CV Zety</a></li>
+                <li><a href="material/Simuladores ATS.pdf">Simuladores ATS</a></li>
+            </ul>
+        </section>
+
+        <section id="qr" class="collapse-section" aria-hidden="true">
+            <h2>Códigos QR</h2>
+            <div class="qr-container">
+                <div class="qr-item">
+                    <img src="imagenes/qr_canva.png" alt="QR Canva">
+                    <p>Canva</p>
+                </div>
+                <div class="qr-item">
+                    <img src="imagenes/qr_zety.png" alt="QR Zety">
+                    <p>Zety</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="ejemplos" class="collapse-section" aria-hidden="true">
+            <h2>Ejemplos de CV</h2>
+            <div class="cv-buttons">
+                <button class="btn" onclick="abrirPDF('material/cv_ejemplo1.pdf')">Ver CV 1</button>
+                <button class="btn" onclick="abrirPDF('material/cv_ejemplo2.pdf')">Ver CV 2</button>
+            </div>
+            <div id="visorPDF">
+                <p>El PDF seleccionado aparecerá aquí.</p>
+            </div>
+        </section>
+    </main>
+</div>
+
+<footer>
+    <p>Capacitación sobre CV - Todos los derechos reservados © 2025</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
